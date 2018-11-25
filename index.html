@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Blasa's blog</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/brands.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+
+<body ng-app='app'>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar" class="nav-wrapper">
+            <div class="sidebar-header">
+                <div class="pic">
+                    <img id='pic' src="assets/img/blasanka_portfolio_bl_asanka_asanka_bl.png" alt="Blasanka" srcset="">
+                </div>
+                <h3>Asanka B.L.</h3>
+                <p>Full stack developer</p>
+                <div class="icons">
+                    <a href="https://stackoverflow.com/users/3675035/blasanka" target="_blank"><i class="fab fa-stack-overflow"></i></a>
+                    <a href="http://github.com/blasanka" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://medium.com/@bliyanageasanka" target="_blank"><i class="fab fa-medium"></i></a>
+                    <a href="https://twitter.com/BLiyanageAsanka" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://plus.google.com/u/0/+BLiyanageAsanka" target="_blank"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="https://www.youtube.com/channel/UC3CK_5AHuYZmhTYMfLH7TZQ" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://slcoderlk.blogspot.com/" target="_blank"><i class="fab fa-blogger"></i></a>
+                </div>
+            </div>
+
+            <ul class="list-unstyled components">
+                <!-- <p>Dummy Heading</p> -->
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Coding</a>
+                        </li>
+                        <li>
+                            <a href="#">Life</a>
+                        </li>
+                        <li>
+                            <a href="#">Motivation</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <!-- <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li> -->
+                <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+            <p class="sidebar-footer">
+                Design and developed by 
+                <a href="http://blasanka.github.io/" target="_blank">blasanka</a> with 
+                <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+            </p>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="content-margin">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <!-- <span>Toggle Sidebar</span> -->
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Latest</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Flutter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">AngularJS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">React</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">NodeJS</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="posts" ng-controller='PostCtrl'>
+                <!-- post 1 -->
+                <ul class="list-group">
+                    <li class="list-group-item" style="margin-bottom: 10px;" ng-repeat='post in posts'>
+                        <a href="" ng-click='{{post.link}}'>
+                            <div style="margin-bottom: 10px;">
+                                    <!-- class="card"  -->
+                                <div class="card-body">
+                                    <h4 class="card-title"> {{ post.title }} </h4>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ post.subtitle }}</h6>
+                                    <p class="card-text">{{ post.body }}</p>
+                                    <div class="tags">
+                                        <a href="#" class="card-link">Tags: </a>
+                                        <a href="#" class="card-link" ng-repeat='tag in post.tags'>{{ tag.name }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+                <div id="load-more-bt" style="text-align: center; margin-top: 20px;">
+                    <button class="btn btn-light">Load more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $('#content').toggleClass('content-margin');
+            });
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.controller('PostCtrl', function ($scope) {
+            $scope.posts = [
+                {
+                    title: "One shot guide to MongoDB for beginners",
+                    subtitle: "NoSQL database",
+                    tags: [
+                        {
+                            name: "Coding",
+                            link: "",
+                        },
+                        {
+                            name: "NoSQL",
+                            link: "",
+                        }
+                    ],
+                    body: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+                    link: ""
+                },
+                {
+                    title: "AngularJS and Angular confusion",
+                    subtitle: "AngularJS, Angular comparison",
+                    tags: [
+                        {
+                            name: "Coding",
+                            link: "",
+                        },
+                        {
+                            name: "Web",
+                            link: "",
+                        },
+                        {
+                            name: "AngularJS",
+                            link: "",
+                        },
+                        {
+                            name: "Angular2+",
+                            link: "",
+                        },
+                    ],
+                    body: "In this blog post I have demonstrated about Angular and what are the differences between AngularJS and Angular2 +. And also this post contains getting started guide.",
+                    link: ""
+                },
+                {
+                    title: "Getting started with AngularJS",
+                    subtitle: "with 20 examples",
+                    tags: [
+                        {
+                            name: "Coding",
+                            link: "",
+                        },
+                        {
+                            name: "Web",
+                            link: "",
+                        },
+                        {
+                            name: "AngularJS",
+                            link: "",
+                        },
+                    ],
+                    body: "This post all about AngularJS and I included 20 coding examples. So that, you guys can easily grasp the content.",
+                    link: ""
+                }
+            ];
+        });
+    </script>
+</body>
+</html>

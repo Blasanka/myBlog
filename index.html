@@ -122,30 +122,84 @@
                     </div>
                 </div>
             </nav>
-
             <div id="posts" ng-controller='PostCtrl'>
-                <!-- post 1 -->
-                <ul class="list-group">
-                    <li class="list-group-item" style="margin-bottom: 10px;" ng-repeat='post in posts'>
-                        <a href="" ng-click='{{post.link}}'>
-                            <div style="margin-bottom: 10px;">
-                                    <!-- class="card"  -->
-                                <div class="card-body">
-                                    <h4 class="card-title"> {{ post.title }} </h4>
-                                    <h6 class="card-subtitle mb-2 text-muted">{{ post.subtitle }}</h6>
-                                    <p class="card-text">{{ post.body }}</p>
-                                    <div class="tags">
-                                        <a href="#" class="card-link">Tags: </a>
-                                        <a href="#" class="card-link" ng-repeat='tag in post.tags'>{{ tag.name }}</a>
+                <div class='latest-posts-list' ng-show="isSelected('blog')">
+                    <!-- post 1 -->
+                    <ul class="list-group">
+                        <li class="list-group-item" style="margin-bottom: 10px;" ng-repeat='post in posts' ng-class="{ 'reset-s' : $index%3==0 }" ng-click="selectTab($index)" >
+                            <a href=''>
+                                    <!-- ng-click='{{post.link}}'  ng-click='viewPost(post)'-->
+                                <div style="margin-bottom: 10px;">
+                                        <!-- class="card"  -->
+                                    <div class="card-body">
+                                        <h4 class="card-title"> {{ post.title }} </h4>
+                                        <h6 class="card-subtitle mb-2 text-muted">{{ post.subtitle }} &nbsp; <span class="date">Date: {{ post.date }}</span></h6>
+                                        <p class="card-text">{{ post.body }}</p>
+                                        <div class="tags">
+                                            <a href="#" class="card-link">Tags: </a>
+                                            <a href="#" class="card-link" ng-repeat='tag in post.tags'>{{ tag.name }}</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+                            </a>
+                        </li>
+                    </ul>
 
-                <div id="load-more-bt" style="text-align: center; margin-top: 20px;">
-                    <button class="btn btn-light">Load more</button>
+                    <div id="load-more-bt" style="text-align: center; margin-top: 20px;">
+                        <button class="btn btn-light">Load more</button>
+                    </div>
+                </div>
+                <div class="post" ng-repeat="post in posts" ng-show="isSelected($index)">
+                    <div>
+                        <h2>{{post.title}}</h2>
+                        <!-- <img src="{{post.image}}" ng-show="{{post.image}}" /> -->
+                        <cite style="color: dimgray; padding: 2px 0 -2px 10px;">by {{post.author}} on {{post.date}}</cite>
+                        <div class="post-body" style="margin-top: 20px;">
+                            <p>{{post.body}}</p>
+                            <p ng-repeat="para in post.paragraphs">
+                                {{para}}
+                            </p>
+                        </div>
+                        <div class="tags" style="margin-top: 10px;">
+                            Tags: &nbsp;
+                            <span ng-repeat="tag in post.tags">
+                                <a href="">{{tag.name}}</a> &nbsp;
+                            </span>
+                        </div>
+                        <div id="load-more-bt" style="text-align: center; margin-top: 20px;">
+                            <button class="btn btn-light" ng-click="selectTab('blog')"  style="float: left;"><i class="fas fa-arrow-left"></i> Back</button> &nbsp;
+                            <span class="post-likes" ng-click="post.likes = post.likes+1"><i class="fas fa-heart" style="font-size: 2em;"></i> {{post.likes}}</span>
+                            <button class="btn btn-light" ng-click="selectTab('blog')" style="float: right;">Next <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                        <div class="comments" ng-controller="CommentController as commentCtrl" style="clear: both; margin-top: 40px;">
+                            <div class="row">
+                                <div class="col-sm-6 col-sm-offset-6">
+                                    <h5>Comments &nbsp; 
+                                        <span class="post-likes" ng-click="post.likes = post.likes+1" style="font-size: 0.6em;">
+                                            <i class="fas fa-comment" style="color: green;"></i>
+                                            {{post.comments.length}}
+                                        </span>
+                                    </h5>
+                                        <ul>
+                                            <li ng-repeat="comment in post.comments" class="list-group-item">
+                                            "{{comment.body}}"
+                                            <cite>- <b>{{comment.author}}</b></cite>
+                                            </li>
+                                        </ul>
+                                </div>
+                                <div class="col-sm-6 col-sm-offset-6">
+                                    <form class="form-group" name="commentForm" ng-submit="commentForm.$valid && commentCtrl.addComment(post)" novalidate>
+                                        <h6>Add a new Comment:</h6>
+                                        <textarea ng-model="commentCtrl.comment.body" class="form-control" required></textarea>
+                                        <label for="">by:</label>
+                                        <input type="text" ng-model="commentCtrl.comment.author" required placeholder="Name" class="form-control" />
+                                        
+                                        <input type="submit" value="Submit" class="btn btn-light" style="margin-top: 10px;" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -169,72 +223,6 @@
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
-    <script>
-        var app = angular.module('app', []);
-        app.controller('PostCtrl', function ($scope) {
-            $scope.posts = [
-                {
-                    title: "One shot guide to MongoDB for beginners",
-                    subtitle: "NoSQL database",
-                    tags: [
-                        {
-                            name: "Coding",
-                            link: "",
-                        },
-                        {
-                            name: "NoSQL",
-                            link: "",
-                        }
-                    ],
-                    body: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-                    link: ""
-                },
-                {
-                    title: "AngularJS and Angular confusion",
-                    subtitle: "AngularJS, Angular comparison",
-                    tags: [
-                        {
-                            name: "Coding",
-                            link: "",
-                        },
-                        {
-                            name: "Web",
-                            link: "",
-                        },
-                        {
-                            name: "AngularJS",
-                            link: "",
-                        },
-                        {
-                            name: "Angular2+",
-                            link: "",
-                        },
-                    ],
-                    body: "In this blog post I have demonstrated about Angular and what are the differences between AngularJS and Angular2 +. And also this post contains getting started guide.",
-                    link: ""
-                },
-                {
-                    title: "Getting started with AngularJS",
-                    subtitle: "with 20 examples",
-                    tags: [
-                        {
-                            name: "Coding",
-                            link: "",
-                        },
-                        {
-                            name: "Web",
-                            link: "",
-                        },
-                        {
-                            name: "AngularJS",
-                            link: "",
-                        },
-                    ],
-                    body: "This post all about AngularJS and I included 20 coding examples. So that, you guys can easily grasp the content.",
-                    link: ""
-                }
-            ];
-        });
-    </script>
+    <script src="./assets/app.js"></script>
 </body>
 </html>

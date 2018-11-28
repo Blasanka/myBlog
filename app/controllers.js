@@ -60,10 +60,9 @@ angular.module('app.controllers', [
     }]);
 
 app.controller('CommentController', function($scope){
-    $scope.comments = {};
     $scope.addComment = function(post){
         $scope.comment.createdOn = Date.now();
-        $scope.comments.push($scope.comment);
+        $scope.post.comments.push($scope.comment);
         $scope.comment ={};
     };
 });

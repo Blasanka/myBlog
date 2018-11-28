@@ -37,11 +37,11 @@
                         </ul>
                 </div>
                 <div class="col-sm-6 col-sm-offset-6">
-                    <form class="form-group" name="commentForm" ng-submit="commentForm.$valid && commentCtrl.addComment(post)" novalidate>
+                    <form class="form-group" name="commentForm" ng-submit="commentForm.$valid && addComment(post)" novalidate>
                         <h6>Add a new Comment:</h6>
-                        <textarea ng-model="commentCtrl.comment.body" class="form-control" required></textarea>
+                        <textarea ng-model="comment.body" class="form-control" required></textarea>
                         <label for="">by:</label>
-                        <input type="text" ng-model="commentCtrl.comment.author" required placeholder="Name" class="form-control" />
+                        <input type="text" ng-model="comment.author" required placeholder="Name" class="form-control" />
                         
                         <input type="submit" value="Submit" class="btn btn-light" style="margin-top: 10px;" />
                     </form>

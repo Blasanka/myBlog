@@ -239,4 +239,14 @@ a.article:hover {
     .content-margin {
         margin-left: 10px;
     }
+
+    .toggle-margin {
+        margin-left: 250px;
+    }
+}
+
+@media (max-width: 500px) {
+    .tags a {
+        display: block;
+    }
 }

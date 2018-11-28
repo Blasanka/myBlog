@@ -10,15 +10,26 @@ angular.module('app.controllers', [
                 console.log(error, 'can not get data.');
             }
         );
-    }]).controller('SinglePostController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+    }]).controller('SinglePostController', ['$scope', '$http', '$routeParams', '$location', function ($scope, $http, $routeParams, $location) {
+        let length;
         $http.get('data/posts.json').then(
             function (response) {
                 $scope.post = response.data[$routeParams.id];
+                length = response.data.length;
             },
             function (error) {
                 console.log(error);
             }
         );
+        $scope.$back = function() { 
+            window.history.back();
+        };
+        $scope.$forward = function () {
+            const nextPostId = parseInt($routeParams.id)+1;
+            if (length > nextPostId) {
+                $location.path( 'post/' + nextPostId );
+            }
+        };
     }]).controller('PageController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
         $http.get('data/pages.json').then(
             function (response) {
@@ -55,7 +66,7 @@ app.controller('CommentController', function($scope){
         $scope.comments.push($scope.comment);
         $scope.comment ={};
     };
-    });
+});
 
 // app.controller('PostCtrl', function ($scope, $http) {
     

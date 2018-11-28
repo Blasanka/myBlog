@@ -16,9 +16,9 @@
             </span>
         </div>
         <div id="load-more-bt" style="text-align: center; margin-top: 20px;">
-            <button class="btn btn-light" style="float: left;"><i class="fas fa-arrow-left"></i> Back</button> &nbsp; <!--ng-click="selectTab('blog')"  -->
+            <button class="btn btn-light" style="float: left;" ng-click="$back()"><i class="fas fa-arrow-left"></i> Back</button> &nbsp; <!--ng-click="selectTab('blog')"  -->
             <span class="post-likes" ng-click="post.likes = post.likes+1"><i class="fas fa-heart" style="font-size: 2em;"></i> {{post.likes}}</span>
-            <button class="btn btn-light" style="float: right;">Next <i class="fas fa-arrow-right"></i></button><!-- ng-click="selectTab('blog')"-->
+            <button class="btn btn-light" style="float: right;" ng-click="$forward()">Next <i class="fas fa-arrow-right"></i></button><!-- ng-click="selectTab('blog')"-->
         </div>
         <div class="comments" ng-controller="CommentController as commentCtrl" style="clear: both; margin-top: 40px;">
             <div class="row">

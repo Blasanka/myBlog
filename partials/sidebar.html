@@ -1,0 +1,52 @@
+<nav id="sidebar" class="nav-wrapper">
+    <div class="sidebar-header">
+        <div class="pic">
+            <img id='pic' src="assets/img/blasanka_portfolio_bl_asanka_asanka_bl.png" alt="Blasanka" srcset="">
+        </div>
+        <h3>Asanka B.L.</h3>
+        <p>Full stack developer</p>
+        <div class="icons">
+            <a href="https://stackoverflow.com/users/3675035/blasanka" target="_blank"><i class="fab fa-stack-overflow"></i></a>
+            <a href="http://github.com/blasanka" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://medium.com/@bliyanageasanka" target="_blank"><i class="fab fa-medium"></i></a>
+            <a href="https://twitter.com/BLiyanageAsanka" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://plus.google.com/u/0/+BLiyanageAsanka" target="_blank"><i class="fab fa-google-plus-g"></i></a>
+            <a href="https://www.youtube.com/channel/UC3CK_5AHuYZmhTYMfLH7TZQ" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://slcoderlk.blogspot.com/" target="_blank"><i class="fab fa-blogger"></i></a>
+        </div>
+    </div>
+
+    <ul class="list-unstyled components">
+        <!-- <p>Dummy Heading</p> -->
+        <li class="active">
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li ng-repeat='sub in subpages'>
+                    <a href="#!/subpage/{{subpages.indexOf(sub)}}">{{ sub.title }}</a>
+                </li>
+            </ul>
+        </li>
+        <li ng-repeat='page in pages'>
+            <a href="#!/page/{{pages.indexOf(page)}}">{{ page.title }}</a>
+        </li>
+        <!-- <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="#">Page 1</a>
+                </li>
+                <li>
+                    <a href="#">Page 2</a>
+                </li>
+                <li>
+                    <a href="#">Page 3</a>
+                </li>
+            </ul>
+        </li> -->
+    </ul>
+    <p class="sidebar-footer">
+        Design and developed by 
+        <a href="http://blasanka.github.io/" target="_blank">blasanka</a> with 
+        <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+    </p>
+</nav>

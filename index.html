@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="/assets/img/blasanka.png" itemprop="image">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/blasanka.png"/>
 
     <title>Blasa's blog</title>
 
@@ -20,188 +22,21 @@
 </head>
 
 <body ng-app='app'>
+    <!-- <div class="container">
+    </div> -->
     <div class="wrapper">
-        <!-- Sidebar  -->
-        <nav id="sidebar" class="nav-wrapper">
-            <div class="sidebar-header">
-                <div class="pic">
-                    <img id='pic' src="assets/img/blasanka_portfolio_bl_asanka_asanka_bl.png" alt="Blasanka" srcset="">
-                </div>
-                <h3>Asanka B.L.</h3>
-                <p>Full stack developer</p>
-                <div class="icons">
-                    <a href="https://stackoverflow.com/users/3675035/blasanka" target="_blank"><i class="fab fa-stack-overflow"></i></a>
-                    <a href="http://github.com/blasanka" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://medium.com/@bliyanageasanka" target="_blank"><i class="fab fa-medium"></i></a>
-                    <a href="https://twitter.com/BLiyanageAsanka" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://plus.google.com/u/0/+BLiyanageAsanka" target="_blank"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="https://www.youtube.com/channel/UC3CK_5AHuYZmhTYMfLH7TZQ" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="https://slcoderlk.blogspot.com/" target="_blank"><i class="fab fa-blogger"></i></a>
-                </div>
-            </div>
-
-            <ul class="list-unstyled components">
-                <!-- <p>Dummy Heading</p> -->
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Coding</a>
-                        </li>
-                        <li>
-                            <a href="#">Life</a>
-                        </li>
-                        <li>
-                            <a href="#">Motivation</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <!-- <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li> -->
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-            <p class="sidebar-footer">
-                Design and developed by 
-                <a href="http://blasanka.github.io/" target="_blank">blasanka</a> with 
-                <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
-            </p>
-        </nav>
-
+        <!-- Sidebar was here  -->
+        
         <!-- Page Content  -->
         <div id="content" class="content-margin">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <!-- <span>Toggle Sidebar</span> -->
-                    </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Latest</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Flutter</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">AngularJS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">React</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">NodeJS</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <div id="posts" ng-controller='PostCtrl'>
-                <div class='latest-posts-list' ng-show="isSelected('blog')">
-                    <!-- post 1 -->
-                    <ul class="list-group">
-                        <li class="list-group-item" style="margin-bottom: 10px;" ng-repeat='post in posts' ng-class="{ 'reset-s' : $index%3==0 }" ng-click="selectTab($index)" >
-                            <a href=''>
-                                    <!-- ng-click='{{post.link}}'  ng-click='viewPost(post)'-->
-                                <div style="margin-bottom: 10px;">
-                                        <!-- class="card"  -->
-                                    <div class="card-body">
-                                        <h4 class="card-title"> {{ post.title }} </h4>
-                                        <h6 class="card-subtitle mb-2 text-muted">{{ post.subtitle }} &nbsp; <span class="date">Date: {{ post.date }}</span></h6>
-                                        <p class="card-text">{{ post.body }}</p>
-                                        <div class="tags">
-                                            <a href="#" class="card-link">Tags: </a>
-                                            <a href="#" class="card-link" ng-repeat='tag in post.tags'>{{ tag.name }}</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <div id="load-more-bt" style="text-align: center; margin-top: 20px;">
-                        <button class="btn btn-light">Load more</button>
-                    </div>
-                </div>
-                <div class="post" ng-repeat="post in posts" ng-show="isSelected($index)">
-                    <div>
-                        <h2>{{post.title}}</h2>
-                        <!-- <img src="{{post.image}}" ng-show="{{post.image}}" /> -->
-                        <cite style="color: dimgray; padding: 2px 0 -2px 10px;">by {{post.author}} on {{post.date}}</cite>
-                        <div class="post-body" style="margin-top: 20px;">
-                            <p>{{post.body}}</p>
-                            <p ng-repeat="para in post.paragraphs">
-                                {{para}}
-                            </p>
-                        </div>
-                        <div class="tags" style="margin-top: 10px;">
-                            Tags: &nbsp;
-                            <span ng-repeat="tag in post.tags">
-                                <a href="">{{tag.name}}</a> &nbsp;
-                            </span>
-                        </div>
-                        <div id="load-more-bt" style="text-align: center; margin-top: 20px;">
-                            <button class="btn btn-light" ng-click="selectTab('blog')"  style="float: left;"><i class="fas fa-arrow-left"></i> Back</button> &nbsp;
-                            <span class="post-likes" ng-click="post.likes = post.likes+1"><i class="fas fa-heart" style="font-size: 2em;"></i> {{post.likes}}</span>
-                            <button class="btn btn-light" ng-click="selectTab('blog')" style="float: right;">Next <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                        <div class="comments" ng-controller="CommentController as commentCtrl" style="clear: both; margin-top: 40px;">
-                            <div class="row">
-                                <div class="col-sm-6 col-sm-offset-6">
-                                    <h5>Comments &nbsp; 
-                                        <span class="post-likes" ng-click="post.likes = post.likes+1" style="font-size: 0.6em;">
-                                            <i class="fas fa-comment" style="color: green;"></i>
-                                            {{post.comments.length}}
-                                        </span>
-                                    </h5>
-                                        <ul>
-                                            <li ng-repeat="comment in post.comments" class="list-group-item">
-                                            "{{comment.body}}"
-                                            <cite>- <b>{{comment.author}}</b></cite>
-                                            </li>
-                                        </ul>
-                                </div>
-                                <div class="col-sm-6 col-sm-offset-6">
-                                    <form class="form-group" name="commentForm" ng-submit="commentForm.$valid && commentCtrl.addComment(post)" novalidate>
-                                        <h6>Add a new Comment:</h6>
-                                        <textarea ng-model="commentCtrl.comment.body" class="form-control" required></textarea>
-                                        <label for="">by:</label>
-                                        <input type="text" ng-model="commentCtrl.comment.author" required placeholder="Name" class="form-control" />
-                                        
-                                        <input type="submit" value="Submit" class="btn btn-light" style="margin-top: 10px;" />
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- navigation bar was here -->
+            <!-- <div id="posts" ng-controller='PostCtrl'>
+                 posts cards earlier existed here -->
+                <!-- single post lived here 
+            </div> -->
+            <sidebar></sidebar>
+            <navigationbar></navigationbar>
+            <div ng-view></div>
         </div>
     </div>
 
@@ -223,6 +58,9 @@
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
-    <script src="./assets/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-route.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers.js"></script>
+    <script src="app/directives.js"></script>
 </body>
 </html>

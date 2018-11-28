@@ -1,0 +1,55 @@
+<div class="post" ng-if='post != null'><!--ng-repeat="post in posts" ng-show="isSelected($index)"-->
+    <div>
+        <h2>{{post.title}}</h2>
+        <!-- <img src="{{post.image}}" ng-show="{{post.image}}" /> -->
+        <cite style="color: dimgray; padding: 2px 0 -2px 10px;">by {{post.author}} on {{post.date}}</cite>
+        <div class="post-body" style="margin-top: 20px;">
+            <p>{{post.previewText}}</p>
+            <p ng-repeat="para in post.paragraphs">
+                {{para}}
+            </p>
+        </div>
+        <div class="tags" style="margin-top: 10px;">
+            Tags: &nbsp;
+            <span ng-repeat="tag in post.tags">
+                <a href="">{{tag.name}}</a> &nbsp;
+            </span>
+        </div>
+        <div id="load-more-bt" style="text-align: center; margin-top: 20px;">
+            <button class="btn btn-light" style="float: left;"><i class="fas fa-arrow-left"></i> Back</button> &nbsp; <!--ng-click="selectTab('blog')"  -->
+            <span class="post-likes" ng-click="post.likes = post.likes+1"><i class="fas fa-heart" style="font-size: 2em;"></i> {{post.likes}}</span>
+            <button class="btn btn-light" style="float: right;">Next <i class="fas fa-arrow-right"></i></button><!-- ng-click="selectTab('blog')"-->
+        </div>
+        <div class="comments" ng-controller="CommentController as commentCtrl" style="clear: both; margin-top: 40px;">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-6">
+                    <h5>Comments &nbsp; 
+                        <span class="post-likes" ng-click="post.likes = post.likes+1" style="font-size: 0.6em;">
+                            <i class="fas fa-comment" style="color: green;"></i>
+                            {{post.comments.length}}
+                        </span>
+                    </h5>
+                        <ul>
+                            <li ng-repeat="comment in post.comments" class="list-group-item">
+                            "{{comment.body}}"
+                            <cite>- <b>{{comment.author}}</b></cite>
+                            </li>
+                        </ul>
+                </div>
+                <div class="col-sm-6 col-sm-offset-6">
+                    <form class="form-group" name="commentForm" ng-submit="commentForm.$valid && commentCtrl.addComment(post)" novalidate>
+                        <h6>Add a new Comment:</h6>
+                        <textarea ng-model="commentCtrl.comment.body" class="form-control" required></textarea>
+                        <label for="">by:</label>
+                        <input type="text" ng-model="commentCtrl.comment.author" required placeholder="Name" class="form-control" />
+                        
+                        <input type="submit" value="Submit" class="btn btn-light" style="margin-top: 10px;" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" ng-if='post == null'>
+    <h1>Bad request</h1>
+</div>

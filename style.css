@@ -226,6 +226,41 @@ a.article:hover {
     background: #333;
 }
 
+.post-image {
+    width: 80%; 
+    height: auto; 
+    margin: 0 auto; 
+    display: block; 
+    margin: 0 auto;
+}
+
+pre {
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px;
+    border: 1px solid #BCBEC0;
+    background: #F1F3F5;
+    font:12px Monaco,Consolas,"Andale  Mono","DejaVu Sans Mono",monospace
+}
+
+code {
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    border: 1px solid #BCBEC0;
+    padding: 2px;
+    font:12px Monaco,Consolas,"Andale  Mono","DejaVu Sans Mono",monospace
+}
+
+pre code {
+    border-radius: 0px; 
+    -moz-border-radius: 0px; 
+    -webkit-border-radius: 0px; 
+    border: 0px;
+    padding: 2px;
+    font:12px Monaco,Consolas,"Andale  Mono","DejaVu Sans Mono",monospace
+}
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */

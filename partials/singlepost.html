@@ -5,9 +5,11 @@
         <cite style="color: dimgray; padding: 2px 0 -2px 10px;">by {{post.author}} on {{post.date}}</cite>
         <div class="post-body" style="margin-top: 20px;">
             <p>{{post.previewText}}</p>
-            <p ng-repeat="para in post.paragraphs">
-                {{para}}
-            </p>
+            <img ng-if="post.imageUrl != '-'" src="{{post.imageUrl}}" alt="" srcset="" class="post-image">
+            <div ng-repeat="para in post.paragraphs">
+                <p> {{ para.text }} </p>
+                <pre class="prettyprint" ng-if="para.code != '-'"><code class="language-sql"></code>{{ para.code }}</code></pre>
+            </div>
         </div>
         <div class="tags" style="margin-top: 10px;">
             Tags: &nbsp;

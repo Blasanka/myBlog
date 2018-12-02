@@ -1,5 +1,5 @@
 # myBlog -> this is where I publish my blog posts most of the time
-## Anyone can download this blog and edit and publish as you need, but not my blogpost, I mean blog template.
+## Anyone can download this blog and edit and publish as you need, but not my blog posts, I mean you get and do whatever you want with the blog template.
 
 ###### In master branch: 
 * Template created using AngularJS, Bootstrap and every data contains in JSON files.

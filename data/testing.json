@@ -1,0 +1,35 @@
+[
+    {
+        "id": "post1",
+        "title": "One shot guide to MongoDB for beginners",
+        "subtitle": "NoSQL database",
+        "imageUrl": "assets/img/mongo-db-logo.png",
+        "date": "23.10.2018",
+        "previewText": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "link": "/posts/post1.html",
+        "author": "Asanka B.L.",
+        "likes": 3
+    },
+    {
+        "id": "post3",
+        "title": "AngularJS and Angular confusion",
+        "subtitle": "AngularJS, Angular comparison",
+        "imageUrl": "-",
+        "date": "24.11.2018",
+        "previewText": "In this blog post I have demonstrated about Angular and what are the differences between AngularJS and Angular2 +. And also this post contains getting started guide.",
+        "link": "",
+        "author": "Asanka B.L.",
+        "likes": 3
+    },
+    {
+        "id": "post3",
+        "title": "Getting started with AngularJS",
+        "subtitle": "with 20 examples",
+        "imageUrl": "-",
+        "date": "25.11.2018",
+        "previewText": "This post all about AngularJS and I included 20 coding examples. So that, you guys can easily grasp the content.",
+        "link": "",
+        "author": "Asanka B.L.",
+        "likes": 3
+    }
+]
